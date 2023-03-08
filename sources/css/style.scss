@@ -175,6 +175,50 @@ header a{
     text-decoration: underline;
 }
 
+
+
+.content-h1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-title::before{
+    display: inline-block;
+    position: absolute;
+
+
+    animation: bar-deco 2s ease-in-out;
+
+    transform: translate(-105%, 600%);
+    content: '';
+    width: 40%;
+    height: 3px;
+
+
+
+
+    background-color: white;
+}
+
+
+.main-title::after{
+    display: inline-block;
+    position: absolute;
+
+    animation: bar-deco 2s ease-in-out;
+    
+    transform: translate(5%, 600%);
+    content: '';
+    width: 40%;
+    height: 3px;
+
+
+    background-color: white;
+}
+
+
+
 #main .all-case{
     display: flex;
     padding: 20px 0px 40px 0px;
@@ -356,5 +400,19 @@ footer{
     }
     100%{
         opacity: 1;
+    }
+}
+
+
+@keyframes bar-deco {
+    
+    0%{
+
+        width: 0;
+
+    }
+
+    100%{
+        width: 40%;
     }
 }

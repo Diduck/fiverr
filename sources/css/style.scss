@@ -39,6 +39,11 @@ header{
     transform: translate(0, 0%);
 }
 
+.restrictive-header{
+    display: none;
+}
+
+
 header img{
     width: 50px;
     height: 50px;
@@ -46,7 +51,7 @@ header img{
 
 .categories{
     display: flex;
-    width: 15%;
+    width: 20%;
     justify-content: space-between;
 }
 
@@ -181,6 +186,7 @@ header a{
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .main-title::before{
@@ -257,16 +263,6 @@ $Hovered: 1;
     
 }
 
-.screen img::before{
-    display: block;
-    content: '';
-    width: 50%;
-    height: 50%;
-    background: white;
-    z-index: 1;
-
-    transform: rotate(25deg) ease-in 1s;
-}
 
 .screen h2:hover{
 
@@ -403,6 +399,15 @@ footer{
     }
 }
 
+@keyframes reverse-visibility-subtitle {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 
 @keyframes bar-deco {
     
@@ -415,4 +420,112 @@ footer{
     100%{
         width: 40%;
     }
+}
+
+
+
+
+
+/*  RESTRICTIVE  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    
+
+    header .categories{
+        width: 40%;
+    }
+
+    .content{
+        width: 20%;
+    }
+
+}
+
+
+@media screen and (max-width: 680px) {
+    
+
+    .categories{
+        display: none;
+    }
+
+    .content{
+        width: 40%;
+    }
+    
+    .restrictive-header{
+
+        content: ' ';
+        display: flex;
+        flex-direction: column;
+        
+    } 
+
+    .restrictive-header:hover{
+        transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: rotate(90deg);
+    }
+    
+    .bar-logo {
+        
+        content: ' ';
+        width: 30px;
+        height: 1px;
+        margin: 5px 0 5px 0;
+        background-color: white;
+        z-index: -1;
+
+    }
+
+    
+    @mixin header-cat(){
+
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 30px;
+        transform: translate(0, 50%);
+        width: auto;
+    
+    }
+
+    .restrictive-header:hover ~ .categories{
+        
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        @include header-cat;
+        background-color: #161b22;
+        opacity: 0;
+        animation: 1s visibility-subtitle;
+        opacity: 1;
+        
+    }
+
+    .categories:hover{
+        @include header-cat;
+    }
+
+    .categories:hover .restrictive-header:nth-last-of-type(-1){
+        transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: rotate(90deg);
+    }
+    
+
+
 }

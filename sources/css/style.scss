@@ -169,7 +169,7 @@ header a{
 
 #main{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     
 }
@@ -228,13 +228,21 @@ header a{
 #main .all-case{
     display: flex;
     padding: 20px 0px 40px 0px;
+    margin-top: 2%;
+    overflow: hidden;
     
+}
+
+#main .content-h1{
+    margin-top: 5%;
 }
 
 #main .all-case img{
     width: 70%;
     border-radius: 20px;
 }
+
+
 
 .screen{
     $h2Hovered: False;
@@ -248,6 +256,10 @@ header a{
     transform: translate(0, 0%);
 
     cursor: pointer;
+
+
+
+
 }
 
 $Hovered: 1;
@@ -418,7 +430,15 @@ footer{
     }
 
     100%{
-        width: 40%;
+
+        @media screen and (max-width: 680px) {
+            width: 30%;
+        }
+
+        @media screen and (min-width: 680px) {
+            width: 40%;
+        }
+
     }
 }
 
@@ -494,6 +514,8 @@ footer{
 
     }
 
+
+
     
     @mixin header-cat(){
 
@@ -521,11 +543,78 @@ footer{
         @include header-cat;
     }
 
-    .categories:hover .restrictive-header:nth-last-of-type(-1){
+
+    .rotate-icon{
         transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
         transform: rotate(90deg);
+        width: -10px;
+        margin-bottom: 10px;
     }
     
+
+    .bar-logo-hover{
+        transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        width: 15px;
+    }
+
+
+    #description{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bio{
+        width: 80%;
+    }
+
+    .skills{
+        width: 80%;
+        display: block;
+    }
+
+
+    .main-title::before{
+        width: 30%;
+    }
+
+    .main-title::after{
+        width: 30%;
+    }
+
+    #main{
+        overflow: hidden;
+    }
+
+    #main .all-case{
+        height: 900px;
+        width: 100%;
+        overflow-x: scroll;
+    } 
+    
+
+    #main .all-case .screen{
+
+        display: flex;
+        justify-content: flex-start;
+        margin: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+        
+    }
+
+    #main .all-case .first-screen{
+        width: 1000px;
+    }
+
+    #main .all-case .screen img{
+        width: 300px;
+    }
+
+
+
 
 
 }

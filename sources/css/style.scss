@@ -85,6 +85,10 @@ header a{
     height: 70%;
 }
 
+#description a{
+    color: #41a6dd;
+}
+
 
 .bio{
     width: 70%;
@@ -318,9 +322,11 @@ $Hovered: 1;
 /* FOOTER  */
 
 footer{
-    
+
     background-color: #0d1116;
     height: 30%;
+    padding-left: 30px;
+    
 }
 
 
@@ -611,6 +617,10 @@ footer{
 
     #main .all-case .screen img{
         width: 300px;
+    }
+
+    #description{
+        height: 100%;
     }
 
 
